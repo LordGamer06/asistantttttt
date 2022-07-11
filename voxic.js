@@ -389,7 +389,7 @@ client.on("guildMemberAdd", async member => {
 
 
 
-client.login(ayarlar.token).then(
+client.login(process.env.token).then(
   function() {
     console.log("[Token-Log] Token doğru bir şekilde çalışıyor.");
   },
@@ -981,7 +981,7 @@ client.on('ready', () => {
   console.log("hazırım!")
  client.user.setPresence({
     activity: {
-      name: `Update`,
+      name: `En İyi Bot`,
       type: "COMPETING"
     },
     status: "idle"
