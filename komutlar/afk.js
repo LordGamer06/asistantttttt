@@ -50,7 +50,7 @@ if(!sebep) return message.channel.send(new Discord.MessageEmbed()
     no.on("collect", r => {
     db.delete(`afk_${kullanıcı.id}`, sebep);
     db.delete(`afk_süre_${kullanıcı.id}`, Date.now());
-      message.channel.send(`**İptal Edildi!**`); message.react("<:hayr:991371129698652190>");
+      message.channel.send(`**İptal Edildi!**`)
     });
   });
     };

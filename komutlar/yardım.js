@@ -19,7 +19,7 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         const b3 = new disbut.MessageMenuOption()
             .setLabel('Yetkili Modülü')
             
-            .setValue('3').setEmoji("963413660930306078")
+            .setValue('3').setEmoji("963413662939369507")
         const b4 = new disbut.MessageMenuOption()
             .setLabel(`Ticket Modülü`)
             
@@ -28,16 +28,16 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         const b5 = new disbut.MessageMenuOption()
             .setLabel('Müzik Modülü')
             
-            .setValue('5').setEmoji("992480867601629214")
+            .setValue('5').setEmoji("1009441394076700672")
 
         const b10 = new disbut.MessageMenuOption()
             .setLabel('İstatistik Modülü')
             
-            .setValue('10').setEmoji("963413660959645796")  
+            .setValue('10').setEmoji("1009441274664849492")  
         const b11 = new disbut.MessageMenuOption()
         .setLabel(`Geliştirici Modülü`)
         
-        .setEmoji("938403046449377290")
+        .setEmoji("1009441383012126821")
         .setValue("11")
         const sil = new disbut.MessageMenuOption()
         .setLabel(`Menüyü Sil`)
@@ -52,6 +52,7 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         .setMinValues(1)
         .setID("menu")
         .setPlaceholder('✨ Bir Modül Seçiniz')
+
         const hakkında = new Discord.MessageEmbed()
         .setAuthor("Assistant Komutlar", client.user.avatarURL())
         .setColor(`#5865f2`)  
@@ -64,9 +65,9 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         
         <:ticket:987358890570166313>  | Ticket Modülü
         
-        <:3959blueundeafened:992480867601629214>    | Müzik Modülü
+        <:ses:1009441394076700672>  | Müzik Modülü
 
-        <:win:976813928090837002> | İstatistik Modülü
+        <:win:976813928090837002>  | İstatistik Modülü
 
         <:2_:938403046449377290>  | Geliştirici Bilgileri
         
@@ -74,7 +75,7 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         .setFooter(`Sorgulayan: ${message.author.tag} `,message.author.avatarURL() )
 
         const embed2 = new Discord.MessageEmbed()
-        .setDescription(`**Kullanıcı Sistemi Komutları**\n\n${prefix}müzik : **Müzik Komutları**\n${prefix}haber : **Güncel Haberler**\n${prefix}havadurumu il : **Güncel Hava Durumu**\n${prefix}karıştır yazı : **Yazdığınız Yazının Karışık Hali**\n${prefix}resim-ara isim: **Yazdığınız İsimdeki Resmi Atar**\n${prefix}discrim : **Sizinle Aynı Etikete Sahip Kişiler**\n${prefix}ping : **Bot Gecikme Süresi**\n${prefix}afk : **Afk Moduna Giriş Yaparsınız**\n${prefix}invites : **Davetlerinize Bakarsınız**\n${prefix}avatar : **Kendinizin veya Başkasının Avatarını Atar**\n${prefix}banner : **Kendinizin veya Başkasının Bannerını Atar**\n${prefix}profil : **Kendinizin veya Başkasının Profiline Bakarsınız**\n${prefix}adamol : **Adam Olursunuz**\n${prefix}akinator : **Akinatoru Başlatır**\n${prefix}balıktut : **Balık Tutarsınız**\n${prefix}beşlik : **Etiketlediğiniz Kişiye Beşlik Çakarsınız**\n${prefix}botbilgi : **Botun Bilgilerine Bakarsınız**\n${prefix}sunucudavet : **Sunucunun Sınırsız Davet Linkini Atar**\n${prefix}espri : **Komik Espriler Yapar**\n${prefix}id : **İstediğiniz Kişinin Id Numarasını Atar**\n${prefix}iltifat : **İstediğiniz Kişiye İltifat Eder**\n${prefix}kanalid : **İstediğiniz Kanalın Id Numarasını Atar**\n${prefix}korona : **Türkiye Korona Günlük İstatistiğini Atar**\n${prefix}meme : **Komik Fotoğraflar Atar**\n${prefix}taksim : **Taksim Dayıyı Atar**\n${prefix}tersyazı : **Yazdığınız Yazıyı Ters Şekli İle Yazar**`)
+        .setDescription(`**Kullanıcı Sistemi Komutları**\n\n${prefix}müzik : **Müzik Komutları**\n${prefix}adamasmaca : **Okullarda Oynadığımız Oyun :)**\n${prefix}dürüm : **Dürüm Yersiniz**\n${prefix}çaylar : **Herkese Çay Ismarlarsınız**\n${prefix}notlarım : **Notlarınıza Bakarsınız**\n${prefix}not-al<sayı> : **Not Alabilirsiniz**\n${prefix}doviz : **Piyasayı Kontrol Edebilirsiniz**\n${prefix}sohbet : **Bot Ile Konuşabilirsiniz (Not: Yeni Eklenen Yapay Zeka Sistemimizdir.)**\n${prefix}haber : **Güncel Haberler**\n${prefix}havadurumu il : **Güncel Hava Durumu**\n${prefix}karıştır yazı : **Yazdığınız Yazının Karışık Hali**\n${prefix}resim-ara isim: **Yazdığınız İsimdeki Resmi Atar**\n${prefix}discrim : **Sizinle Aynı Etikete Sahip Kişiler**\n${prefix}ping : **Bot Gecikme Süresi**\n${prefix}afk : **Afk Moduna Giriş Yaparsınız**\n${prefix}invites : **Davetlerinize Bakarsınız**\n${prefix}avatar : **Kendinizin veya Başkasının Avatarını Atar**\n${prefix}banner : **Kendinizin veya Başkasının Bannerını Atar**\n${prefix}profil : **Kendinizin veya Başkasının Profiline Bakarsınız**\n${prefix}adamol : **Adam Olursunuz**\n${prefix}akinator : **Akinatoru Başlatır**\n${prefix}balıktut : **Balık Tutarsınız**\n${prefix}beşlik : **Etiketlediğiniz Kişiye Beşlik Çakarsınız**\n${prefix}botbilgi : **Botun Bilgilerine Bakarsınız**\n${prefix}sunucudavet : **Sunucunun Sınırsız Davet Linkini Atar**\n${prefix}espri : **Komik Espriler Yapar**\n${prefix}iltifat : **İstediğiniz Kişiye İltifat Eder**\n${prefix}kanalid : **İstediğiniz Kanalın Id Numarasını Atar**\n${prefix}korona : **Türkiye Korona Günlük İstatistiğini Atar**\n${prefix}meme : **Komik Fotoğraflar Atar**\n${prefix}taksim : **Taksim Dayıyı Atar**\n${prefix}tersyazı : **Yazdığınız Yazıyı Ters Şekli İle Yazar**`)
 
           .setColor(`#5865f2`)  
             .setFooter(`${message.author.tag} tarafından istendi.`, message.author.displayAvatarURL({dynamic: true}))
@@ -155,7 +156,7 @@ let ping2 = client.ws.ping
                 {name: "<:davet:976841167360643092> Sunucu Sayısı ve Kullanıcı Miktarı", value:`>>> Bot Şuan \`${client.guilds.cache.size}\` **Sunucuda** \n${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} **kullanıcıyı** izliyor`, inline: false},
 {name: "<:star:976813927893696532> Botun sahibi", value:`>>> ${user}`,inline: true},
                 )
-            .setImage("https://cdn.discordapp.com/attachments/951909806011203664/992418137247076432/unknown.png")
+            .setImage("https://cdn.discordapp.com/attachments/930493082296786954/1013065436612546691/unknown.png")
             .setFooter(`${message.author.tag} tarafından istendi!`, message.author.displayAvatarURL({dynmaic: true}))
             .setTimestamp()
 
@@ -165,7 +166,7 @@ let ping2 = client.ws.ping
             .addFields(
                 {name: `>>> Bot Geliştiricisi:`, value:`<:2_:938403046449377290> ${user}`, inline: false},
                 {name: ">>> Durum:", value:`${user.presence.status}`, inline: false},
-                {name: "> Linkler", value: "[Botu Ekle!](https://discord.com/api/oauth2/authorize?client_id=915339116332326972&permissions=8&scope=bot%20applications.commands) | [Botu Oyla!](https://top.gg/bot/915339116332326972) | [Web Sitesi](http://www.assistantbot.tk/) | [Destek Sunucusu](https://discord.gg/AKbAEfEAam)"}
+                {name: "> Linkler", value: "[Botu Ekle!](https://discord.com/api/oauth2/authorize?client_id=915339116332326972&permissions=8&scope=bot%20applications.commands) | [Botu Oyla!](https://top.gg/bot/915339116332326972) | [Destek Sunucusu](https://discord.gg/AKbAEfEAam)"}
             )
             .setFooter(`Assistant`, user.displayAvatarURL({dynamic: true}))
             .setTimestamp()
@@ -209,12 +210,12 @@ let ping2 = client.ws.ping
             }
             if(menu.values[0] === '10'){
                 msg.edit({
-                    embed: embed10,button,destek
+                    embed: embed10,
                 })
             }
             if(menu.values[0] === '11'){
                 msg.edit({
-                    embed: embed11,destek,button
+                    embed: embed11,
                 })
             }
             if(menu.values[0] === 'sil'){

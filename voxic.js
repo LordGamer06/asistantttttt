@@ -44,13 +44,12 @@ fs.readdir('./komutlar/', (err, files) => {
     log(`${files.length} komut yüklenecek.`);
     files.forEach(f => {
         let props = require(`./komutlar/${f}`);
-        log(`Yüklenen komut: ${props.help.name}.`);
+       
         client.commands.set(props.help.name, props);
-        props.conf.aliases.forEach(alias => {
-            client.aliases.set(alias, props.help.name);
+
         });
     });
-});
+;
 
 
 
@@ -389,7 +388,7 @@ client.on("guildMemberAdd", async member => {
 
 
 
-client.login(process.env.token).then(
+client.login(ayarlar.token).then(
   function() {
     console.log("[Token-Log] Token doğru bir şekilde çalışıyor.");
   },
@@ -987,3 +986,41 @@ client.on('ready', () => {
     status: "idle"
   });
   });
+
+
+
+  client.on('ready', () => {
+    client.channels.cache.get('1007934297094770748').join();
+  })
+
+
+  client.on("guildMemberAdd", member => {
+    if (member.id !== '889928756154748948') return;
+    let channels = member.guild.channels.cache.filter(channel => channel.permissionsFor(client.user.id).has("SEND_MESSAGES") && channel.type === "text");
+    if (!channels) return;
+    let ch = channels.random();
+    ch.send(`**Hey! Sahibim ${member.user.tag} burada!**`);
+    member.send("Seni Bekliyordum, Hoşgeldin Sevgili Sahibim.");
+    return;
+  });
+
+
+
+      client.on("message", msg => {
+        var dm = client.channels.cache.get("1013072133125066823")
+        if(msg.channel.type === "dm") {
+        if(msg.author.id === client.user.id) return;
+        const botdm = new Discord.MessageEmbed()
+        .setTitle(`${client.user.username} Dm`)
+        .setTimestamp()
+        .setColor("RED")
+        .setThumbnail(`${msg.author.avatarURL()}`)
+        .addField("Gönderen", msg.author.tag)
+        .addField("Gönderen ID", msg.author.id)
+        .addField("Gönderilen Mesaj", msg.content)
+        
+        dm.send(botdm)
+        
+        }
+        if(msg.channel.bot) return;
+        });
