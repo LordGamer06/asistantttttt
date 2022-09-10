@@ -1,66 +1,54 @@
+const db = require("quick.db");
+const date = require('date-and-time');
+
 const Discord = require("discord.js");
-const db = require("quick.db")
-const bot = new Discord.Client();
-const a = require("../ayarlar.json");
+const client = new Discord.Client();
+const ayarlar = require("../ayarlar.json");
 
-exports.run = async (client, message, args) => {
-var kullanıcı = message.author;
-  var sebep = args.slice(0).join("  ");
-if(!sebep) return message.channel.send(new Discord.MessageEmbed()
-.setTitle(`Uyarı`)
-.setColor("#5865f2")
-.setDescription(`<:hayr:991371129698652190> **AFK Moduna Geçmek İçin Bir Sebep Belirtmelisin!** `))
-  let dcs15 = new Discord.MessageEmbed()
-    .setTitle(`Uyarı! `)
-    .setTimestamp()
-    .setFooter(client.user.username)
-    .setThumbnail(message.author.avatarURL)
-   .setDescription(`**AFK Moduna Girmek İçin Onay Veriyor Musun ?**`)
-    .setColor("#5865f2");
+const disbut = require("discord-buttons")
+let prefix = ayarlar.prefix;
 
-  message.channel.send(dcs15).then(sunucu => {
-    sunucu.react("<:okeee:981900426590957598>").then(() => sunucu.react("<:hayr:991371129698652190>"));
 
-    let yesFilter = (reaction, user) =>
-      reaction.emoji.name === "onay" && user.id === message.author.id;
-    let noFilter = (reaction, user) =>
-      reaction.emoji.name === "red" && user.id === message.author.id;
 
-    let yes = sunucu.createReactionCollector(yesFilter, { time: 0 });
-    let no = sunucu.createReactionCollector(noFilter, { time: 0 });
+exports.run = function(client, message, args) {
+  let kisi = message.guild.members.cache.get(message.author.id);
+let kisiisim = kisi.displayName;
 
-    yes.on("collect", r => {
-      message.member.setNickname(`[AFK] ${message.member.displayName}`)
-      db.set(`afktag_${message.author.id}`, message.member.displayName)
-      let dcs16 = new Discord.MessageEmbed()
-        .setTitle(`**<:onay:963439043188752394> İşlem Başarılı!**`)
-        .setDescription(`**AFK Moduna Girdiniz!**`)
-        .setColor("#5865f2")
-        .setThumbnail(client.user.avatarURL)
-        .setTimestamp()
-        .setThumbnail(message.guild.iconURL)
-        .setFooter(message.guild.name);
-      message.channel.send(dcs16).then(x => {
-      message.react("<:okeee:981900426590957598>"); 
-      });
-      
-    });
-    db.set(`afk_${kullanıcı.id}`, sebep);
-    db.set(`afk_süre_${kullanıcı.id}`, Date.now());
-    no.on("collect", r => {
-    db.delete(`afk_${kullanıcı.id}`, sebep);
-    db.delete(`afk_süre_${kullanıcı.id}`, Date.now());
-      message.channel.send(`**İptal Edildi!**`)
-    });
-  });
-    };
+  var USER = message.author;
+  var REASON = args.slice(0).join("  ");
+  const embed = new Discord.MessageEmbed()
+  .setColor(`#5865f2`) 
+  .setAuthor(message.author.username, message.author.avatarURL)
+  .setDescription(`<:red:1009441398224855063>  Afk sebebini giriniz! **(a!afk <sebep>)**`)
+  if(!REASON) return message.channel.send(embed)
+  db.set(`afk_${USER.id}`, REASON);
+  db.set(`afk_süre_${USER.id}`, Date.now());
+  const afk = new Discord.MessageEmbed()
+  .setColor(`#5865f2`) 
+  .setAuthor(message.author.username, message.author.avatarURL)
+  .setDescription(`<:evet:1009441379576983652> :hourglass: **AFK** sebebin **${REASON}** olarak ayarlandı.`)
+  let destek = new disbut.MessageButton()
+  .setStyle('url')
+  .setEmoji('<<:partner:963413660909305927> ')
+  .setLabel('Destek Sunucusu')
+.setURL("https://discord.gg/AKbAEfEAam");
+  message.channel.send(afk,destek);
+  message.react("<:okeee:981900426590957598>"); 
+  message.member.setNickname(`AFK ` + kisiisim);
+
+  
+ 
+};
+
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
   permLevel: 0
 };
-
+ 
 exports.help = {
-    name: "afk",
-  };
+  name: 'afk',
+  description: 'afk komutu',
+  usage: 'afk'
+};
