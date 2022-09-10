@@ -54,7 +54,7 @@ let prefix = ayarlar.prefix || db.fetch(`prefix_${message.guild.id}`)
         .setPlaceholder('✨ Bir Modül Seçiniz')
 
         const hakkında = new Discord.MessageEmbed()
-        .setAuthor("Assistant Komutlar", client.user.avatarURL())
+        .setAuthor("Assistant Komutlar", message.author.avatarURL()())
         .setColor(`#5865f2`)  
         .setThumbnail(`https://cdn.discordapp.com/attachments/951909806011203664/981579708124782642/standard.gif`)
         .setDescription(`\n\n\n<:ayarlar:946715168191156295>  | Ayarlamalı Modüller
@@ -156,7 +156,7 @@ let ping2 = client.ws.ping
                 {name: "<:davet:976841167360643092> Sunucu Sayısı ve Kullanıcı Miktarı", value:`>>> Bot Şuan \`${client.guilds.cache.size}\` **Sunucuda** \n${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} **kullanıcıyı** izliyor`, inline: false},
 {name: "<:star:976813927893696532> Botun sahibi", value:`>>> ${user}`,inline: true},
                 )
-            .setImage("https://cdn.discordapp.com/attachments/930493082296786954/1013065436612546691/unknown.png")
+            .setImage("https://cdn.discordapp.com/attachments/903239160897355808/1017391372631818250/Ekran_Goruntusu_4.png")
             .setFooter(`${message.author.tag} tarafından istendi!`, message.author.displayAvatarURL({dynmaic: true}))
             .setTimestamp()
 
