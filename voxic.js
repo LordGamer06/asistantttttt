@@ -219,7 +219,7 @@ client.on("message", async message => {
     const afk_cikis = new Discord.MessageEmbed()
       .setColor("#5865f2")
       .setDescription(
-        `<@${message.author.id}>\`${zaman.hours}\` **Saat**  \`${zaman.minutes}\` **Dakika** \`${zaman.seconds}\` **Saniye** , **AFK Modundaydın!**`
+        `<@${message.author.id}> Hoşgeldin: \`${zaman.hours}\` **Saat**  \`${zaman.minutes}\` **Dakika** \`${zaman.seconds}\` **Saniye** , **AFK Modundaydın!**`
       );
     message.channel.send(afk_cikis);
   }
@@ -234,7 +234,7 @@ client.on("message", async message => {
     const afk_uyarı = new Discord.MessageEmbed()
       .setColor("#5865f2")
       .setDescription(
-        `<@${kullanıcı.id}> Adlı Kullanıcı \`${sebep}\` Sebebiyle; \`${zaman.hours}\` **Saat**  \`${zaman.minutes}\` **Dakika** \`${zaman.seconds}\` **Saniyedir AFK!**`
+        `<@${kullanıcı.id}> Adlı Kullanıcı \`${sebep}\` Sebebiyle; \`${zaman.hours}\` Saat  \`${zaman.minutes}\` Dakika \`${zaman.seconds}\` Saniyedir AFK!`
       );
     message.reply(afk_uyarı);
   }
